@@ -11,7 +11,7 @@ function Dashboard({ user, logout }) {
   const [ageRating, setAgeRating] = useState("");
   const [videoFile, setVideoFile] = useState(null);
 
-  const feedRef = useRef(null); // internal scroller root
+  const feedRef = useRef(null); 
 
   useEffect(() => {
     fetch(`${API}/videos/latest`)
@@ -46,7 +46,7 @@ function Dashboard({ user, logout }) {
         height: "100vh",
         background: "black",
         color: "white",
-        overflow: "hidden",           // <— lock page scroll
+        overflow: "hidden",          
         position: "relative",
       }}
     >
@@ -86,7 +86,6 @@ function Dashboard({ user, logout }) {
         </button>
       </div>
 
-      {/* Internal scroller (the feed) */}
       <div
         ref={feedRef}
         style={{
@@ -97,7 +96,6 @@ function Dashboard({ user, logout }) {
           WebkitOverflowScrolling: "touch",
         }}
       >
-        {/* Optional creator panel above first video */}
         {user.Role === "Creator" && (
           <section
             style={{
@@ -147,7 +145,6 @@ function Dashboard({ user, logout }) {
 
 
 
-        {/* Videos */}
         {videos.map((video) => (
           <VideoCard key={video.VideoID} video={video} user={user} rootRef={feedRef} />
         ))}

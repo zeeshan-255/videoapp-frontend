@@ -1,42 +1,6 @@
-// import React, { useState } from "react";
-
-// const API = process.env.REACT_APP_API_URL;  // ✅ use env variable
-
-// function Login({ setUser, goHome }) {
-//   const [email, setEmail] = useState("");
-//   const [passwordHash, setPasswordHash] = useState("");
-
-//   const handleLogin = async () => {
-//     const res = await fetch(`${API}/users/login`, {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ email, passwordHash })
-//     });
-
-//     if (res.ok) {
-//       const data = await res.json();
-//       setUser(data.user); // Role comes from backend
-//     } else {
-//       alert("Invalid credentials");
-//     }
-//   };
-
-//   return (
-//     <div style={{ padding: 20 }}>
-//       <h2>Login</h2>
-//       <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} /><br />
-//       <input type="password" placeholder="Password" value={passwordHash} onChange={e => setPasswordHash(e.target.value)} /><br />
-//       <button onClick={handleLogin}>Login</button>
-//       <button onClick={goHome}>Back</button>
-//     </div>
-//   );
-// }
-
-// export default Login;
-
 import React, { useState } from "react";
 
-const API = process.env.REACT_APP_API_URL;  // ✅ env variable
+const API = process.env.REACT_APP_API_URL;  
 
 function Login({ setUser, goHome }) {
   const [email, setEmail] = useState("");
@@ -64,8 +28,8 @@ function Login({ setUser, goHome }) {
       }
 
       const data = await res.json();
-      setUser(data.user);         // role from backend
-      goHome && goHome();         // optional: return to home
+      setUser(data.user);        
+      goHome && goHome();        
     } catch (e) {
       setErr(e.message || "Login failed. Please try again.");
     } finally {
@@ -92,7 +56,6 @@ function Login({ setUser, goHome }) {
         boxSizing: "border-box",
       }}
     >
-      {/* Background Video */}
       <video
         autoPlay
         loop
@@ -111,7 +74,6 @@ function Login({ setUser, goHome }) {
         <source src="https://res.cloudinary.com/dyh8wkiqp/video/upload/v1756331756/3569294-hd_1920_1080_24fps_s3likd.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay */}
       <div
         style={{
           position: "absolute",
@@ -121,7 +83,6 @@ function Login({ setUser, goHome }) {
         }}
       />
 
-      {/* Card */}
       <div
         style={{
           width: "92%",
@@ -157,7 +118,6 @@ function Login({ setUser, goHome }) {
           Welcome
         </p>
 
-        {/* Inputs */}
         <div style={{ display: "grid", gap: 12 }}>
           <input
             placeholder="Email"
@@ -206,7 +166,6 @@ function Login({ setUser, goHome }) {
           />
         </div>
 
-        {/* Error */}
         {err ? (
           <div
             style={{
@@ -220,7 +179,6 @@ function Login({ setUser, goHome }) {
           </div>
         ) : null}
 
-        {/* Buttons */}
         <div style={{ display: "grid", gap: 10, marginTop: 16 }}>
           <button
             onClick={handleLogin}
@@ -271,7 +229,6 @@ function Login({ setUser, goHome }) {
           </button>
         </div>
 
-        {/* Helper text */}
         <p
           style={{
             marginTop: 10,

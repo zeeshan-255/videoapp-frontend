@@ -1,48 +1,6 @@
-// import React, { useState } from "react";
-
-// const API = process.env.REACT_APP_API_URL;  // ✅ use env variable
-
-// function Signup({ goHome }) {
-//   const [email, setEmail] = useState("");
-//   const [passwordHash, setPasswordHash] = useState("");
-
-//   const handleSignup = async () => {
-//     await fetch(`${API}/users/signup`, {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({
-//         username: email.split("@")[0],
-//         email,
-//         passwordHash,
-//         role: "Consumer" // always Consumer
-//       })
-//     });
-//     alert("Consumer account created! Please login.");
-//     goHome();
-//   };
-
-//   return (
-//     <div style={{ padding: 20 }}>
-//       <h2>Create Consumer Account</h2>
-//       <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} /><br />
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         value={passwordHash}
-//         onChange={e => setPasswordHash(e.target.value)}
-//       /><br />
-//       <button onClick={handleSignup}>Sign Up</button>
-//       <button onClick={goHome}>Back</button>
-//     </div>
-//   );
-// }
-
-// export default Signup;
-
-
 import React, { useState } from "react";
 
-const API = process.env.REACT_APP_API_URL; // ✅ env variable
+const API = process.env.REACT_APP_API_URL; 
 
 function Signup({ goHome }) {
   const [email, setEmail] = useState("");
@@ -100,7 +58,6 @@ function Signup({ goHome }) {
         color: "#fff",
       }}
     >
-      {/* Background Video */}
       <video
         autoPlay
         loop
@@ -118,7 +75,6 @@ function Signup({ goHome }) {
         <source src="https://res.cloudinary.com/dyh8wkiqp/video/upload/v1756331756/3569294-hd_1920_1080_24fps_s3likd.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for readability */}
       <div
         style={{
           position: "absolute",
@@ -129,7 +85,6 @@ function Signup({ goHome }) {
         }}
       />
 
-      {/* Card */}
       <div
         style={{
           width: "92%",
@@ -165,7 +120,6 @@ function Signup({ goHome }) {
           Join and start sharing.
         </p>
 
-        {/* Inputs */}
         <div style={{ display: "grid", gap: 12 }}>
           <input
             placeholder="Email"
@@ -214,7 +168,6 @@ function Signup({ goHome }) {
           />
         </div>
 
-        {/* Error */}
         {err ? (
           <div
             style={{
@@ -228,7 +181,6 @@ function Signup({ goHome }) {
           </div>
         ) : null}
 
-        {/* Buttons */}
         <div style={{ display: "grid", gap: 10, marginTop: 18 }}>
           <button
             onClick={handleSignup}
@@ -279,7 +231,6 @@ function Signup({ goHome }) {
           </button>
         </div>
 
-        {/* Tiny helper text */}
         <p
           style={{
             marginTop: 12,
